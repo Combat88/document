@@ -1,0 +1,106 @@
+### OpenGL ES SL 数据类型
+ - void 
+   - 说明: 没有返回值
+   - 示例: void main(void)
+ - float
+   - 说明: 单精度浮点数
+   - 示例: float f = 1.0
+ - int 
+   - 说明: 整数
+   - 示例: int i = 1
+ - bool
+   - 说明: 布尔值
+   - 示例: bool b = true
+ - bvec2
+   - 说明: 2个布尔值
+   - 示例: bvec2 b = bvec2(true, false)
+ - bvec3
+   - 说明: 3个布尔值
+   - 示例: bvec3 b = bvec3(true, false, true)
+ - bvec4
+   - 说明: 4个布尔值
+   - 示例: bvec4 b = bvec4(true, false, true, false)
+ - ivec2
+   - 说明: 2个整数
+   - 示例: ivec2 i = ivec2(1, 2)
+ - ivec3
+   - 说明: 3个整数
+   - 示例: ivec3 i = ivec3(1, 2, 3)
+ - ivec4
+   - 说明: 4个整数
+   - 示例: ivec4 i = ivec4(1, 2, 3, 4)
+ - uvec2
+   - 说明: 2个无符号整数
+   - 示例: uvec2 u = uvec2(1, 2)
+ - uvec3
+   - 说明: 3个无符号整数
+   - 示例: uvec3 u = uvec3(1, 2, 3)
+ - uvec4
+   - 说明: 4个无符号整数
+   - 示例: uvec4 u = uvec4(1, 2, 3, 4)
+ - vec2
+   - 说明: 2个浮点数
+   - 示例: vec2 v = vec2(1.0, 2.0)
+ - vec3
+   - 说明: 3个浮点数
+   - 示例: vec3 v = vec3(1.0, 2.0, 3.0)
+ - vec4
+   - 说明: 4个浮点数
+   - 示例: vec4 v = vec4(1.0, 2.0, 3.0, 4.0)
+ - mat2
+   - 说明: 2x2 矩阵
+   - 示例: mat2 m = mat2(1.0, 2.0, 3.0, 4.0)
+ - mat3
+   - 说明: 3x3 矩阵
+   - 示例: mat3 m = mat3(1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0)
+ - mat4
+   - 说明: 4x4 矩阵
+   - 示例: mat4 m = mat4(1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0, 11.0, 12.0, 13.0, 14.0, 15.0, 16.0)
+ - sampler2D
+   - 说明: 2D 纹理
+   - 示例: sampler2D s = sampler2D(0)
+ - samplerCube
+   - 说明: 立方体纹理
+   - 示例: samplerCube c = samplerCube(0)
+
+
+### OpenGL ES SL 修饰符
+- const
+  - 说明: 常量
+  - 示例: const float PI = 3.14159265358979323846
+- attribute
+  - 说明: 用于顶点着色器中的输入变量。
+  - 作用: 这些变量是从顶点数据传入的，每个顶点可以有不同的值。
+  - 示例: 顶点的位置、法线、纹理坐标等  
+    - attribute vec4 a_Position;
+- uniform
+  - 说明: 用于在着色器中传递全局变量的修饰符。
+  - 作用: 这些变量在绘制的整个过程中保持不变，适用于所有顶点和片段。
+  - 示例: 变换矩阵、光源位置、材质属性等
+    - uniform mat4 u_MvpMatrix;
+- varying
+  - 说明: 用于在顶点着色器和片段着色器之间传递数据的变量。
+  - 作用: 这些变量的值在顶点着色器中计算后，会被插值并传递到片段着色器，每个片段可以接收到不同的值。
+  - 示例: 顶点颜色、纹理坐标等
+    - varying vec4 v_Color;
+
+### 内置变量
+1.顶点着色器
+ - gl_Position
+   - 说明: 顶点着色器中顶点的最终位置
+   - 作用: 顶点着色器必须将顶点的位置写入 gl_Position 变量，否则绘制结果将是未定义的。
+   - 示例: gl_Position = u_MvpMatrix * a_Position;
+- gl_PointSize
+   - 说明: 保存变换点的大小
+   - 作用: 在顶点着色器中设置 gl_PointSize 变量，可以控制点的大小。
+   - 示例: gl_PointSize = 10.0;
+2.片段着色器
+ - gl_FragColor
+   - 说明: 片段着色器中片段的最终颜色
+   - 作用: 片段着色器必须将片段的颜色写入 gl_FragColor 变量，否则绘制结果将是未定义的。
+ - gl_FragCoord
+   - 说明: 片段着色器中当前片段的窗口坐标
+   - 作用:
+ - gl_FrontFacing
+   - 说明: 片段着色器中当前片段是否为正面
+ - gl_FragColor

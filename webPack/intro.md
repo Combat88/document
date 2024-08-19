@@ -5,6 +5,7 @@
    - Webpack 的工作原理
    - 安装和配置 Webpack
    - 入口(entry)和出口(output)
+     - code split
 
 2. **Webpack 核心概念**
    - 模块(Modules)
@@ -50,3 +51,6 @@
    - 最佳实践和技巧
 
 这个大纲涵盖了 Webpack 的基础知识,核心概念,配置,优化,开发环境,生产环境以及一些高级主题。学习这些内容,您将能够掌握 Webpack 的使用并在实际项目中应用它。同时,也要结合实际项目需求,不断探索和学习 Webpack 的更多功能和技巧。
+![alt text](image.png)
+
+sourceMaps

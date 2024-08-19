@@ -12,8 +12,17 @@
    - `sass-loader`: 用于编译 Sass/SCSS 文件为 CSS。
    - `less-loader`: 用于编译 Less 文件为 CSS。
    - `ts-loader`: 用于将 TypeScript 文件转换为 JavaScript。
+   - `scss-loader`: 用于编译 SCSS 文件为 CSS。
+   - `vue-loader`: 用于处理 Vue 单文件组件(.vue 文件)。
+   - `eslint-loader`: 用于在 Webpack 中运行 ESLint。
+   - `postcss-loader`: 用于使用 PostCSS 处理 CSS。
+   - `tslint-loader`: 用于在 Webpack 中运行 TSLint。
+   - `vue-style-loader`: 用于将 Vue 单文件组件中的样式注入到 HTML 中。
+   - `vue-template-compiler`: 用于编译 Vue 单文件组件中的模板部分。
+   - `vue-hot-reload-api`: 用于实现 Vue 组件的热重载。
+  
 
-1. **Loader 的使用**
+3. **Loader 的使用**
    - 在 Webpack 配置文件的 `module.rules` 中定义 Loader:
      ``` javascript
      {
@@ -34,7 +43,7 @@
    - `test` 属性用于匹配文件,`use` 属性指定要使用的 Loader。
    - Loader 可以链式使用,从右到左的顺序执行。
 
-2. **自定义 Loader**
+4. **自定义 Loader**
    - 创建方法
      - 自定义 Loader 是一个 Node.js 模块,需要导出一个函数。
      - 这个函数接收源代码作为参数,并返回转换后的代码。

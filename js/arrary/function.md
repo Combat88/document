@@ -14,6 +14,7 @@ JavaScript 数组的常用方法:
 
 2. `slice()`
    - 功能: 返回一个新数组,包含从开始到结束（不包括结束）的数组元素
+   - 拷贝数组
    - 是否改变原数组: 否
    - 示例:
      ```javascript
@@ -302,4 +303,23 @@ JavaScript 数组的常用方法:
               const arr = [1, 2, 3, 4, 5];
               console.log(arr.push(6)); // 输出: 6
               console.log(arr); // 输出: [1, 2, 3, 4, 5, 6]
+      ```
+28. `shift`
+    - 功能: 移除数组的第一个元素,并返回该元素
+    - 是否改变原数组: 是
+    - 示例:
+      ```javascript
+              const arr = [1, 2, 3, 4, 5];
+              console.log(arr.shift()); // 输出: 1
+              console.log(arr); // 输出: [2, 3, 4, 5]
+      ```
+
+29. `unshift`
+    - 功能: 向数组的头部添加一个或多个元素,并返回新数组的长度
+    - 是否改变原数组: 是
+    - 示例:
+      ```javascript
+              const arr = [1, 2, 3, 4, 5];
+              console.log(arr.unshift(0)); // 输出: 6
+              console.log(arr); // 输出: [0, 1, 2, 3, 4, 5]
       ```
